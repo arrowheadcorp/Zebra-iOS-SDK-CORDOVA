@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <title>Zebra Scanner Demo</title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div class="app">
+            <h1>Zebra Scanner Demo</h1>
+            
+            <div class="tab-nav">
+                <button class="tab-btn" data-tab="scanners">Scanners</button>
+                <button class="tab-btn active" data-tab="pairing">Pairing</button>
+                <button class="tab-btn" data-tab="scanning">Scanning</button>
+            </div>
+            
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+            
+            <div id="scanners-tab" class="tab-content">
+                <h2>Connected Scanners</h2>
+                <div id="scannerStatus" class="status-bar">
+                    <span class="loader"></span> Searching for scanners...
+                </div>
+                <div id="scannerList" class="scanner-list">
+                    <p>No scanners available</p>
+                </div>
+                <button id="refreshScannersButton" class="btn secondary">Refresh Scanner List</button>
+                
+                <div class="instructions">
+                    <h3>To fully unpair a scanner:</h3>
+                    <ol>
+                        <li>Go to iOS Settings</li>
+                        <li>Select Bluetooth</li>
+                        <li>Find the scanner in the paired devices list</li>
+                        <li>Tap the "i" icon next to it</li>
+                        <li>Select "Forget This Device"</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div id="pairing-tab" class="tab-content active">
+                <div class="instructions">
+                    <h3>Pairing Instructions:</h3>
+                    <ol>
+                        <li>Make sure the scanner is turned on</li>
+                        <li>Generate the pairing barcode below</li>
+                        <li>Scan the barcode with your Zebra scanner</li>
+                        <li>The scanner will beep to confirm pairing</li>
+                        <li>Go to the Scanners tab to verify connection</li>
+                    </ol>
+                </div>
+                
+                <div class="settings">
+                    <h2>Scanner Settings</h2>
+                    <div class="setting-option">
+                        <span>Set Factory Defaults</span>
+                        <input type="checkbox" id="setDefaults">
+                    </div>
+                    <div class="setting-option">
+                        <span>Protocol</span>
+                        <select id="protocol">
+                            <option value="ble" selected>BLE</option>
+                            <option value="mfi">MFi</option>
+                            <option value="hid">HID</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="barcode-container">
+                    <img id="barcodeImage" alt="Pairing Barcode">
+                </div>
+                
+                <div id="errorMessage" class="error"></div>
+                
+                <button id="generateButton" class="btn">Generate Pairing Barcode</button>
+            </div>
+            
+            <div id="scanning-tab" class="tab-content">
+                <div class="scan-test">
+                    <h2>Scan Testing</h2>
+                    <input type="text" id="scanTest" placeholder="Scan a barcode..." readonly>
+                    <button id="listenButton" class="btn">Start Listening for Barcodes</button>
+                    <p>Scan any barcode to see the result above</p>
+                </div>
+                
+                <div class="scan-fields">
+                    <h2>Test Input Fields</h2>
+                    <div class="input-field">
+                        <label for="field1">Scan Field 1:</label>
+                        <input type="text" id="field1" name="field1" placeholder="Click to focus or scan...">
+                    </div>
+                    <div class="input-field">
+                        <label for="field2">Scan Field 2:</label>
+                        <input type="text" id="field2" name="field2" placeholder="Click to focus or scan..." >
+                    </div>
+                    <div class="input-field">
+                        <label for="field3">Scan Field 3:</label>
+                        <input type="text" id="field3" name="field3" placeholder="Click to focus or scan..." >
+                    </div>
+                    <button id="clearFieldsButton" class="btn secondary">Clear Fields</button>
+                </div>
+            </div>
+            
+            <div id="logDisplay" class="log">Initializing...</div>
+        </div>
+        
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

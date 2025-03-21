@@ -1,0 +1,37 @@
+{
+  "name": "cordova-plugin-zebra-scanner",
+  "version": "1.0.0",
+  "description": "Cordova plugin for Zebra scanner integration on iOS",
+  "cordova": {
+    "id": "cordova-plugin-zebra-scanner",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowheadcorp/Zebra-iOS-SDK-CORDOVA.git"
+  },
+  "keywords": [
+    "cordova",
+    "zebra",
+    "scanner",
+    "barcode",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova": ">=9.0.0",
+        "cordova-ios": ">=6.0.0"
+      }
+    }
+  },
+  "author": "Arrowhead Corporation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrowheadcorp/Zebra-iOS-SDK-CORDOVA/issues"
+  },
+  "homepage": "https://github.com/arrowheadcorp/Zebra-iOS-SDK-CORDOVA#readme"
+}

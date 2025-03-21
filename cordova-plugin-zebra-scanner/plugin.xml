@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-zebra-scanner"
+        version="1.0.0">
+    
+    <name>Zebra Scanner SDK</name>
+    <description>Cordova plugin for Zebra scanner integration on iOS</description>
+    <license>MIT</license>
+    <keywords>cordova,zebra,scanner,barcode,ios</keywords>
+    <repo>https://github.com/arrowheadcorp/Zebra-iOS-SDK-CORDOVA.git</repo>
+    
+    <engines>
+        <engine name="cordova" version=">=9.0.0" />
+        <engine name="cordova-ios" version=">=6.0.0" />
+    </engines>
+    
+    <!-- JavaScript interface -->
+    <js-module src="www/zebraSTC.js" name="ZebraSTCPlugin">
+        <clobbers target="ZebraSTCPlugin" />
+    </js-module>
+    
+    <!-- iOS platform -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ZebraSTCPlugin">
+                <param name="ios-package" value="ZebraSTCPlugin" />
+            </feature>
+        </config-file>
+        
+        <!-- Source files -->
+        <source-file src="src/ios/ZebraSTCPlugin.swift" />
+        
+        <!-- Add Zebra Scanner SDK Framework -->
+        <framework src="src/ios/ZebraScannerSDK.xcframework" custom="true" embed="true" />
+        
+        <!-- Required permissions -->
+        <config-file target="*-Info.plist" parent="NSBluetoothAlwaysUsageDescription">
+            <string>This app needs Bluetooth access to connect to Zebra scanners</string>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="NSBluetoothPeripheralUsageDescription">
+            <string>This app needs Bluetooth access to connect to Zebra scanners</string>
+        </config-file>
+        
+        <!-- Use Swift -->
+        <preference name="SWIFT_VERSION" default="5.0" />
+    </platform>
+</plugin>

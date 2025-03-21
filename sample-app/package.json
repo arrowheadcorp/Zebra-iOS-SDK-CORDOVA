@@ -1,0 +1,45 @@
+{
+  "name": "zebra-scanner-sample-app",
+  "displayName": "Zebra Scanner Demo",
+  "version": "1.0.0",
+  "description": "A sample Cordova app demonstrating the Zebra Scanner plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "cordova prepare",
+    "build": "cordova build",
+    "build:ios": "cordova build ios",
+    "run:ios": "cordova run ios"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "zebra",
+    "scanner",
+    "barcode"
+  ],
+  "author": "Arrowhead Corporation",
+  "license": "MIT",
+  "dependencies": {
+    "cordova-ios": "^6.3.0",
+    "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-splashscreen": "^6.0.0",
+    "cordova-plugin-statusbar": "^2.4.3"
+  },
+  "devDependencies": {
+    "cordova": "^10.0.0",
+    "cordova-plugin-zebra-scanner": "file:../cordova-plugin-zebra-scanner"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-zebra-scanner": {
+        "SWIFT_VERSION": "5.0"
+      }
+    },
+    "platforms": [
+      "ios"
+    ]
+  }
+}

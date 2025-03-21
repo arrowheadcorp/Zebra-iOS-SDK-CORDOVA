@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.arrowhead.zebrascannerapp" version="1.0.0" 
+        xmlns="http://www.w3.org/ns/widgets" 
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Zebra Scanner Demo</name>
+    <description>
+        A sample app demonstrating the Zebra Scanner Cordova plugin
+    </description>
+    <author email="contact@arrowheadcorp.com" href="https://arrowheadcorp.com">
+        Arrowhead Corporation
+    </author>
+    <content src="index.html" />
+    
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="SplashScreenDelay" value="2000" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenBackgroundColor" value="#151515" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="BackgroundColor" value="#151515" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#151515" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        
+        <!-- iOS 11.0+ -->
+        <preference name="deployment-target" value="12.0" />
+        
+        <!-- Splash Screen 
+        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />-->
+        
+        <!-- iOS app icons -->
+        <!-->
+        <icon src="res/icon/ios/icon-20.png" width="20" height="20" />
+        <icon src="res/icon/ios/icon-40.png" width="40" height="40" />
+        <icon src="res/icon/ios/icon-60.png" width="60" height="60" />
+        <icon src="res/icon/ios/icon-76.png" width="76" height="76" />
+        <icon src="res/icon/ios/icon-83.5.png" width="83.5" height="83.5" />
+        <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024" />
+        -->
+    </platform>
+    
+    <plugin name="cordova-plugin-statusbar" spec="~2.4.3" />
+    <plugin name="cordova-plugin-device" spec="~2.0.3" />
+  <!--  <plugin name="cordova-plugin-splashscreen" spec="~5.0.3" /> -->
+    
+    <!-- Use local plugin for development -->
+<plugin name="cordova-plugin-zebra-scanner" spec="../cordova-plugin-zebra-scanner">
+    <variable name="SWIFT_VERSION" value="5.0" />
+</plugin></widget>

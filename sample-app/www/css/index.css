@@ -1,0 +1,314 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #151515;
+    color: #fff;
+}
+
+.app {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.barcode-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+#barcodeImage {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.btn {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 8px auto;
+    width: 80%;
+    cursor: pointer;
+    display: block;
+}
+
+.btn.active {
+    background-color: #28a745;
+}
+
+.btn.secondary {
+    background-color: #6c757d;
+}
+
+.btn.danger {
+    background-color: #dc3545;
+}
+
+.error {
+    color: #ff3b30;
+    margin: 10px 0;
+    display: none;
+}
+
+.log {
+    display: none; /* Hide the logs by default */
+    background-color: #222;
+    border: 1px solid #444;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    font-family: monospace;
+    font-size: 12px;
+    max-height: 100px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.setting-option {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 5px;
+}
+
+select {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.scan-test {
+    margin: 20px auto;
+    width: 80%;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+}
+
+.scan-test h2 {
+    margin-top: 0;
+}
+
+.scan-test input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.scanners-section {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.scanner-list {
+    text-align: left;
+    margin: 10px 0;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.scanner-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scanner-info {
+    flex: 1;
+}
+
+.scanner-name {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.scanner-details {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.scanner-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.scanner-actions button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.connect-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.disconnect-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.forget-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.active-badge {
+    background-color: #28a745;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#deviceready {
+    display: none; /* Hide the device ready section */
+}
+
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background-color: #222;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.tab-btn.active {
+    background-color: #007aff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007aff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.status-bar {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.instructions {
+    margin: 15px auto;
+    padding: 15px;
+    background-color: #222;
+    border-radius: 5px;
+    width: 80%;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.instructions h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.scan-fields {
+    margin: 20px auto;
+    width: 80%;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+}
+
+.input-field {
+    margin-bottom: 25px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 16px;
+    height: auto;
+}
